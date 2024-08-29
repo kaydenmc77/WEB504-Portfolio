@@ -1,0 +1,126 @@
+/* CSS Variables */
+
+:root {
+  --main: #AB55D9;
+  --text: #FFFFFF;
+  --highlight: #D755D9;
+  --accent: #8055D9;
+  --background: #F3DCFB;
+}
+
+@font-face {
+    font-family: 'Lexend'; /* Name your font family */
+    src: url('../fonts/Lexend-VariableFont_wght.ttf'); /* Locate the .ttf file within your directory*/
+  }
+  
+* {
+    font-family: 'Lexend';
+    margin: 0;
+}
+
+main {
+  margin: 3rem auto;
+  max-width: 60%;
+}
+
+nav.main-nav {
+  width: 100vw;
+  background-color: var(--main);
+}
+
+.main-nav ul {
+  display: flex;
+  list-style-type: none;
+  gap: 4.5rem;
+  padding: 1rem;
+}
+
+.main-nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 32px;
+  transition: 250ms all ease-in-out;
+}
+
+.main-nav a:hover {
+  color: var(--background);
+  letter-spacing: 0.1rem;
+}
+
+div.container {
+  background-color: var(--background);
+  padding: 2rem;
+}
+
+div.content-box {
+  background-color: var(--text);
+  display: flex;
+  padding: 1rem;
+  border: var(--accent), solid;
+}
+
+.content-box img {
+  height: 28rem;
+  border: var(--accent), solid;
+}
+
+div#text-box {
+  padding-left: 1rem;
+}
+
+div#text-box h1 {
+  color: var(--accent);
+  font-size: 2.9em;
+}
+
+div#text-box h3 {
+  color: var(--accent);
+  font-size: 2em;
+}
+
+div#text-box h4 {
+  color: var(--accent);
+  font-size: 1.8em;
+}
+
+/* Skills Page */
+
+div#skills-container {
+  display: grid;
+  grid-template-areas:
+  "box box"
+  "box box";
+  grid-template-columns: 1fr, 1fr;
+  gap: 10rem;
+}
+
+div.individual-container {
+  padding: 1rem;
+  background-color: var(--background);
+}
+
+div.language-box {
+  border: solid;
+  grid-area: "box";
+  align-items: center;
+}
+
+div.language-box img {
+  height: 15rem;
+}
+
+div#html-box {
+
+}
+
+div#css-box {
+  
+}
+
+div#js-box {
+  
+}
+
+div#kotlin-box {
+  
+}
