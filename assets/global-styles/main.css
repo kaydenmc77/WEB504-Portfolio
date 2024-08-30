@@ -42,17 +42,19 @@ main {
   margin: 5rem auto;
   justify-content: center;
   align-items: center;
+  display: flex;
 }
 
 @media (orientation: landscape) {
   main {
     min-width: 50%;
-    max-width: 60%;
+    max-width: 70%;
   }
 }
 
 @media (orientation: portrait) {
   main {
+    margin-top: 8em;
     max-width: 90vw;
   }
 }
@@ -126,7 +128,7 @@ nav.main-nav {
 
 @media (orientation: portrait) {
   .main-nav a {
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
 }
 
@@ -185,7 +187,7 @@ div.content-box {
 /* Text box for home page content */
 @media (orientation: landscape) {
   div#text-box {
-    padding-left: 1rem;
+    padding-left: 2rem;
   }
 }
 
@@ -203,7 +205,7 @@ div#text-box h1 {
 @media (orientation: portrait) {
   div#text-box h1 {
     padding-top: 0.5em;
-    font-size: 6.2vw;
+    font-size: 6vw;
     text-align: center;
   }
 }
@@ -223,6 +225,29 @@ div#text-box h3 {
   div#text-box h3 {
     font-size: 4.3vw;
     text-align: center;
+  }
+}
+
+@media (orientation: landscape) {
+  div#text-box ul {
+      list-style-type: disc;
+    }
+  
+    div#text-box li {
+      font-size: 1.4vw  ;
+    }
+}
+
+@media (orientation: portrait) {
+div#text-box ul {
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+  }
+
+  div#text-box li {
+    text-decoration: none;
+    font-size: 3vw;
   }
 }
 
@@ -246,30 +271,69 @@ div#text-box h4 {
 
 /*SECTION - Skills Page Styling*/
 
+@media (orientation: landscape) {}
+
+@media (orientation: portrait) {}
+
 /* Sets a div to contain all of the skill panels */
 div#skills-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
 
-  gap: 17em;
+  justify-content: center;
 }
 
-/* Styles the div for 2 skills at a time */
-section.skillset {
-  display: flex;
+@media (orientation: landscape) {
+  div#skills-container {
+    gap: 4em;
+  }
+}
 
-  gap: 10rem;
+@media (orientation: portrait) {
+  div#skills-container {
+    gap: 2em;
+  }
 }
 
 /* Styling for each individual language box, makes consequent content fall underneath and sets a relative position for absolute elements */
 div.language-box {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 
   position: relative;
-  width: 120%;
+
+  width: 45%;
+
+  margin-bottom: 16em;
+}
+
+@media (orientation: portrait) {
+  div.language-box {
+    margin-bottom: 20em;
+  }
+}
+
+@media (max-width: 900px) {
+  div.language-box {
+    margin-bottom: 16em;
+      width: 80%;
+      gap: 0;
+    }
+}
+
+@media (max-width: 700px) {
+  div.language-box {
+    margin-bottom: 20em;
+  }
+}
+
+@media (max-width: 500px) {
+  div.language-box {
+    margin-bottom: 26em;
+  }
 }
 
 /* Resizes the language badges and gives them a higher depth */
@@ -286,9 +350,7 @@ div.individual-container {
 
   background-color: var(--background);
   
-  min-width: 20rem;
   padding: 1rem;
-  margin: 0;
 
   position: absolute;
   top: 3em;
@@ -307,13 +369,14 @@ div.text-box {
   padding: 1rem;
   padding-top: 12.4em;
   width: 100%;
+  min-height: 10em;
 }
 
 /* Styles the header for the language panels */
 div.text-box h1 {
   color: var(--accent);
   text-align: center;
-  font-size: 3em;
+  font-size: 3.2em;
 }
 
 /* Styles the paragraphs for the language panels */
@@ -321,7 +384,7 @@ div.text-box p {
   color: var(--accent);
   text-align: center;
   font-weight: 400;
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
 
 /*SECTION - Projects Page Styling */
@@ -435,6 +498,8 @@ div.contact-container {
   border: var(--accent), solid;
 
   padding: 2rem;
+
+  width: 70%
 }
 
 /* Styles the text box for the contact page */
