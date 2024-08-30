@@ -430,7 +430,7 @@ div.project-image div img {
 /*SECTION - Contact Page Styling */
 
 /* Styles the main box for general content */
-div.content-container {
+div.contact-container {
   background-color: var(--background);
   border: var(--accent), solid;
 
@@ -439,11 +439,12 @@ div.content-container {
 
 /* Styles the text box for the contact page */
 .contact-container div { 
-  display: flex;
   justify-content: center;
   flex-direction: column;
+}
 
-  padding: 2em 8em;
+@media (orientation: landscape) {
+  
 }
 
 /* Styles the header for the contact form */
@@ -471,11 +472,6 @@ div.content-container {
   border: solid, var(--accent);
 
   padding: 1em;
-}
-
-/* Styles the input placeholder text */
-.contact-container ::placeholder {
-  color: var(--accent);
 }
 
 /* Styles the contact form's large text area input field */
