@@ -1,0 +1,64 @@
+@import url("../../assets/global-styles/main.css");
+
+/*SECTION - Navigation Styling */
+
+/* Fixes the nav bar to the top of the screen, sets background colour to purple */
+nav.main-nav {
+    width: 100vw;
+    z-index: 100;
+
+    top: 0;
+    left: 0;
+    position: fixed;
+
+    background-color: var(--accent);
+    box-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+/* Removes list styling and spaces navigation elements out */
+.main-nav ul {
+    display: flex;
+    list-style-type: none;
+
+    padding: 1rem;
+}
+
+@media (orientation: landscape) {
+    .main-nav ul {
+        gap: 4.5em;
+    }
+}
+
+@media (orientation: portrait) {
+    .main-nav ul {
+        gap: 1.3em;
+        justify-content: center;
+    }
+}
+
+/* Sets text color to white, removes underlining and adds a fade transition */
+.main-nav a {
+    color: var(--text);
+    text-decoration: none;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+
+    transition: 250ms all ease-in-out;
+}
+
+@media (orientation: landscape) {
+    .main-nav a {
+        font-size: 1.3em;
+    }
+}
+
+@media (orientation: portrait) {
+    .main-nav a {
+        font-size: 1.2em;
+    }
+}
+
+/* Fades navigation element when hovered, spaces letters out */
+.main-nav a:hover {
+    color: var(--background);
+    letter-spacing: 0.1rem;
+}

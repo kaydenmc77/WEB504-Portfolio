@@ -1,0 +1,75 @@
+@import url("../../assets/global-styles/main.css");
+
+/*SECTION - Contact Page Styling */
+
+/* Styles the main box for general content */
+div.contact-container {
+    background-color: var(--background);
+    border: var(--accent), solid;
+
+    padding: 2rem;
+
+    width: 70%
+}
+
+/* Styles the text box for the contact page */
+.contact-container div {
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Styles the header for the contact form */
+.contact-container h1 {
+    text-align: center;
+
+    color: var(--accent);
+    font-size: 3em;
+
+    padding-bottom: 1em;
+}
+
+/* Styles the contact form */
+.contact-container form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 2em;
+}
+
+/* Styles the individual input boxes for the contact form */
+.contact-container input {
+    font-size: 1.3em;
+
+    border: solid, var(--accent);
+
+    padding: 1em;
+}
+
+/* Styles the contact form's large text area input field */
+.contact-container textarea {
+    resize: vertical;
+
+    font-size: 1.3em;
+
+    border: solid, var(--accent);
+
+    padding: 1em;
+    min-height: 6em;
+}
+
+/* Styles the contact form's submit button */
+.contact-container input[type="submit"] {
+    color: var(--text);
+    font-size: 1.5em;
+
+    background-color: var(--main);
+    border: none;
+    border-radius: 0.2em;
+
+    transition: 250ms all ease-in-out;
+}
+
+/* Highlights the submit button on hover */
+.contact-container input[type="submit"]:hover {
+    background-color: var(--highlight);
+}

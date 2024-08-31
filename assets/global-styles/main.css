@@ -1,29 +1,23 @@
-/*SECTION - Color Variables */
-
-:root {
-  --main: #AB55D9;
-  --text: #FFFFFF;
-  --highlight: #D755D9;
-  --accent: #8055D9;
-  --background: #F3DCFB;
-}
+@import url("../../utils/variables.css");
 
 /*SECTION - Page Wide Styling */
 
 @font-face {
-    font-family: 'Lexend'; /* Name your font family */
-    src: url('../fonts/Lexend-VariableFont_wght.ttf'); /* Locate the .ttf file within your directory*/
-  }
-  
+  font-family: 'Lexend';
+  /* Name your font family */
+  src: url('../fonts/Lexend-VariableFont_wght.ttf');
+  /* Locate the .ttf file within your directory*/
+}
+
 /* Resets margin and sets font to Lexend for everything   */
 * {
-    font-family: 'Lexend';
+  font-family: 'Lexend';
 
-    margin: 0;
+  margin: 0;
 }
 
 /* Prevents horizontal scroll bar and makes sure all content fits in window */
-html { 
+html {
   overflow-x: hidden;
   overflow-y: scroll;
 
@@ -39,14 +33,14 @@ body {
 
 /* Brings in a margin from the top to offset the nav bar, centers content and keeps the content focused on the center of the screen */
 main {
-  margin: 5rem auto;
+  display: flex;
   justify-content: center;
   align-items: center;
-  display: flex;
 }
 
 @media (orientation: landscape) {
   main {
+    margin: 5em auto;
     min-width: 50%;
     max-width: 70%;
   }
@@ -54,9 +48,16 @@ main {
 
 @media (orientation: portrait) {
   main {
-    margin-top: 8em;
+    margin: 5em auto;
     max-width: 90vw;
   }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
 }
 
 /*SECTION - Scrollbar Styling */
@@ -74,496 +75,4 @@ main {
 /* Sets custom scrollbar track to purple */
 ::-webkit-scrollbar-thumb {
   background-color: var(--accent);
-  box-shadow: inset rgba(0, 0, 0, 0.5);
-}
-
-/*SECTION - Navigation Styling */
-
-/* Fixes the nav bar to the top of the screen, sets background colour to purple */
-nav.main-nav {
-  width: 100vw;
-  z-index: 100;
-
-  top: 0;
-  left: 0;
-  position: fixed;
-
-  background-color: var(--accent);
-}
-
-/* Removes list styling and spaces navigation elements out */
-.main-nav ul {
-  display: flex;
-  list-style-type: none;
-
-  padding: 1rem;
-}
-
-@media (orientation: landscape) {
-  .main-nav ul {
-    gap: 4.5em;
-  }
-}
-
-@media (orientation: portrait) {
-  .main-nav ul {
-    gap: 1.3em;
-    justify-content: center;
-  }
-}
-
-/* Sets text color to white, removes underlining and adds a fade transition */
-.main-nav a {
-  color: var(--text);
-  text-decoration: none;
-
-  transition: 250ms all ease-in-out;
-}
-
-@media (orientation: landscape) {
-  .main-nav a {
-    font-size: 1.3em;
-  }
-}
-
-@media (orientation: portrait) {
-  .main-nav a {
-    font-size: 1.2em;
-  }
-}
-
-/* Fades navigation element when hovered, spaces letters out */
-.main-nav a:hover {
-  color: var(--background);
-  letter-spacing: 0.1rem;
-}
-
-/*SECTION - Home Page Styling */
-
-/* Styles the main backing box for general content */
-div.container {
-  background-color: var(--background);
-  border: var(--accent), solid;
-
-  padding: 2rem;
-}
-
-/* Styles the white child box to put text and content into */
-div.content-box {
-  display: flex;
-
-  background-color: var(--text);
-  border: var(--accent), solid;
-
-  padding: 1rem;
-}
-
-@media (orientation: portrait) {
-  div.content-box {
-    flex-direction: column;
-  }
-}
-
-/* Resizes front page photo */
-.content-box img {
-  border: var(--accent), solid;
-  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.5);
-}
-
-@media (orientation: landscape) {
-  .content-box img {
-    width: 35%;
-    height: 35%;
-  }
-}
-
-@media (orientation: portrait) {
-  .content-box img {
-    width: 100%;
-    height: 100%;
-  }
-}
-
-/* Text box for home page content */
-@media (orientation: landscape) {
-  div#text-box {
-    padding-left: 2rem;
-  }
-}
-
-/* Styles the home page header */
-div#text-box h1 {
-  color: var(--accent);
-}
-
-@media (orientation: landscape) {
-  div#text-box h1 {
-    font-size: 3vw;
-  }
-}
-
-@media (orientation: portrait) {
-  div#text-box h1 {
-    padding-top: 0.5em;
-    font-size: 6vw;
-    text-align: center;
-  }
-}
-
-/* Styles the home page sub-header */
-div#text-box h3 {
-  color: var(--accent);
-}
-
-@media (orientation: landscape) {
-  div#text-box h3 {
-    font-size: 2.3vw;
-  }
-}
-
-@media (orientation: portrait) {
-  div#text-box h3 {
-    font-size: 4.3vw;
-    text-align: center;
-  }
-}
-
-@media (orientation: landscape) {
-  div#text-box ul {
-      list-style-type: disc;
-    }
-  
-    div#text-box li {
-      font-size: 1.4vw  ;
-    }
-}
-
-@media (orientation: portrait) {
-div#text-box ul {
-    list-style-type: none;
-    text-align: center;
-    padding: 0;
-  }
-
-  div#text-box li {
-    text-decoration: none;
-    font-size: 3vw;
-  }
-}
-
-/* Styles the second home page sub-header */
-div#text-box h4 {
-  color: var(--accent);
-}
-
-@media (orientation: landscape) {
-  div#text-box h4 {
-    font-size: 2.3vw;
-  }
-}
-
-@media (orientation: portrait) {
-  div#text-box h4 {
-    font-size: 4.3vw;
-    text-align: center;
-  }
-}
-
-/*SECTION - Skills Page Styling*/
-
-@media (orientation: landscape) {}
-
-@media (orientation: portrait) {}
-
-/* Sets a div to contain all of the skill panels */
-div#skills-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-
-  justify-content: center;
-}
-
-@media (orientation: landscape) {
-  div#skills-container {
-    gap: 4em;
-  }
-}
-
-@media (orientation: portrait) {
-  div#skills-container {
-    gap: 2em;
-  }
-}
-
-/* Styling for each individual language box, makes consequent content fall underneath and sets a relative position for absolute elements */
-div.language-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  position: relative;
-
-  width: 45%;
-
-  margin-bottom: 16em;
-}
-
-@media (orientation: portrait) {
-  div.language-box {
-    margin-bottom: 20em;
-  }
-}
-
-@media (max-width: 900px) {
-  div.language-box {
-    margin-bottom: 16em;
-      width: 80%;
-      gap: 0;
-    }
-}
-
-@media (max-width: 700px) {
-  div.language-box {
-    margin-bottom: 20em;
-  }
-}
-
-@media (max-width: 500px) {
-  div.language-box {
-    margin-bottom: 26em;
-  }
-}
-
-/* Resizes the language badges and gives them a higher depth */
-div.language-box img {
-  height: 16em;
-
-  z-index: 20;
-}
-
-/* Styles the main backing box for general content, attaches it to a specific part of the website */
-div.individual-container {
-  display: flex;
-  justify-content: center;
-
-  background-color: var(--background);
-  
-  padding: 1rem;
-
-  position: absolute;
-  top: 3em;
-  z-index: 10;
-}
-
-/* Styles the text box for the language panels */
-div.text-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  background-color: var(--text);
-  border: var(--accent), solid;
-
-  padding: 1rem;
-  padding-top: 12.4em;
-  width: 100%;
-  min-height: 10em;
-}
-
-/* Styles the header for the language panels */
-div.text-box h1 {
-  color: var(--accent);
-  text-align: center;
-  font-size: 3.2em;
-}
-
-/* Styles the paragraphs for the language panels */
-div.text-box p {
-  color: var(--accent);
-  text-align: center;
-  font-weight: 400;
-  font-size: 1.5em;
-}
-
-/*SECTION - Projects Page Styling */
-
-/* Styles the main backing div for content */
-div.projects-container {
-  background-color: var(--background);
-  border: var(--accent), solid;
-
-  padding: 2rem;
-}
-
-/* Styles the individual project boxes */
-div.project-box {
-  display: flex;
-
-  background-color: var(--text);
-  border: var(--accent), solid;
-
-  padding: 1rem;
-}
-
-/* Styles the  transparent text overlay for each project window */
-div.project-image {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  gap: 2rem;
-
-  background-size: 100%;
-  border: var(--accent), solid;
-  border-radius: 0.3em;
-  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
-
-  width: 100%;
-  height: 100%;
-  padding: 6.7% 0;
-  
-  transition: 550ms all;
-}
-
-div#gamelink.project-image {
-  background-image: url("/WEB504-Portfolio/assets/images/gamelink.png");
-}
-
-div#booktok.project-image {
-  background-image: url("/WEB504-Portfolio/assets/images/booktok.png");
-}
-
-div#reminder.project-image {
-  background-image: url("/WEB504-Portfolio/assets/images/reminders.png");
-}
-
-div#tictactoe.project-image {
-  background-image: url("/WEB504-Portfolio/assets/images/tictactoe.png");
-}
-
-div#records.project-image {
-  background-image: url("/WEB504-Portfolio/assets/images/records.png");
-}
-
-/* Removes shadow on hover */
-div.project-image:hover {
-  box-shadow: none;
-}
-
-/* Styles the header for each project window */
-div.project-image h1 {
-  color: var(--text);
-  font-size: 5em;
-  text-shadow: 0.1em 0.1em rgba(0, 0, 0, 0.5);
-
-  opacity: 100%;
-
-  transition: 550ms all;
-}
-
-/* Sets header invisible on hover */
-div.project-image:hover h1 {
-  opacity: 0%;
-}
-
-/* Styles the projects languages div */
-div.project-image div {
-  display: flex;
-
-  gap: 4em;
-
-  opacity: 100%;
-
-  transition: 550ms all;
-}
-
-/* Turns the languages div invisible on hover */
-div.project-image:hover div {
-  opacity: 0%;
-}
-
-/* Resizes the language badges */
-div.project-image div img {
-  height: 10em;
-}
-
-/*SECTION - Contact Page Styling */
-
-/* Styles the main box for general content */
-div.contact-container {
-  background-color: var(--background);
-  border: var(--accent), solid;
-
-  padding: 2rem;
-
-  width: 70%
-}
-
-/* Styles the text box for the contact page */
-.contact-container div { 
-  justify-content: center;
-  flex-direction: column;
-}
-
-@media (orientation: landscape) {
-  
-}
-
-/* Styles the header for the contact form */
-.contact-container h1 {
-  text-align: center;
-
-  color: var(--accent);
-  font-size: 3em;
-
-  padding-bottom: 1em;
-}
-
-/* Styles the contact form */
-.contact-container form {
-  display: flex;
-  flex-direction: column;
-
-  gap: 2em;
-}
-
-/* Styles the individual input boxes for the contact form */
-.contact-container input {
-  font-size: 1.3em;
-
-  border: solid, var(--accent);
-
-  padding: 1em;
-}
-
-/* Styles the contact form's large text area input field */
-.contact-container textarea {
-  resize: vertical;
-  
-  font-size: 1.3em;
-  
-  border: solid, var(--accent);
-
-  padding: 1em;
-  min-height: 6em;
-}
-
-/* Styles the contact form's submit button */
-.contact-container input[type="submit"] {
-  color: var(--text);
-  font-size: 1.5em;
-
-  background-color: var(--main);
-  border: none;
-  border-radius: 0.2em;
-  
-  transition: 250ms all ease-in-out;
-}
-
-/* Highlights the submit button on hover */
-.contact-container input[type="submit"]:hover {
-  background-color: var(--highlight);
 }

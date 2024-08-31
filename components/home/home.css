@@ -1,0 +1,132 @@
+@import url("../../assets/global-styles/main.css");
+
+/*SECTION - Home Page Styling */
+
+/* Styles the main backing box for general content */
+div.container {
+    background-color: var(--background);
+    border: var(--accent), solid;
+
+    padding: 2rem;
+}
+
+/* Styles the white child box to put text and content into */
+div.content-box {
+    display: flex;
+
+    background-color: var(--text);
+    border: var(--accent), solid;
+
+    padding: 1rem;
+}
+
+@media (orientation: portrait) {
+    div.content-box {
+        flex-direction: column;
+    }
+}
+
+/* Resizes front page photo */
+.content-box img {
+    border: var(--accent), solid;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+@media (orientation: landscape) {
+    .content-box img {
+        width: 35%;
+        height: 35%;
+    }
+}
+
+@media (orientation: portrait) {
+    .content-box img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* Text box for home page content */
+@media (orientation: landscape) {
+    div#text-box {
+        padding-left: 2rem;
+    }
+}
+
+/* Styles the home page header */
+div#text-box h1 {
+    color: var(--accent);
+}
+
+@media (orientation: landscape) {
+    div#text-box h1 {
+        font-size: 3vw;
+    }
+}
+
+@media (orientation: portrait) {
+    div#text-box h1 {
+        padding-top: 0.5em;
+        font-size: 6vw;
+        text-align: center;
+    }
+}
+
+/* Styles the home page sub-header */
+div#text-box h3 {
+    color: var(--accent);
+}
+
+@media (orientation: landscape) {
+    div#text-box h3 {
+        font-size: 2.3vw;
+    }
+}
+
+@media (orientation: portrait) {
+    div#text-box h3 {
+        font-size: 4.3vw;
+        text-align: center;
+    }
+}
+
+@media (orientation: landscape) {
+    div#text-box ul {
+        list-style-type: disc;
+    }
+
+    div#text-box li {
+        font-size: 1.4vw;
+    }
+}
+
+@media (orientation: portrait) {
+    div#text-box ul {
+        list-style-type: none;
+        text-align: center;
+        padding: 0;
+    }
+
+    div#text-box li {
+        text-decoration: none;
+        font-size: 3vw;
+    }
+}
+
+/* Styles the second home page sub-header */
+div#text-box h4 {
+    color: var(--accent);
+}
+
+@media (orientation: landscape) {
+    div#text-box h4 {
+        font-size: 2.3vw;
+    }
+}
+
+@media (orientation: portrait) {
+    div#text-box h4 {
+        font-size: 4.3vw;
+        text-align: center;
+    }
+}

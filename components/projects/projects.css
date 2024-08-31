@@ -1,0 +1,165 @@
+@import url("../../assets/global-styles/main.css");
+
+/*SECTION - Projects Page Styling */
+
+/* Styles the main backing div for content */
+div.projects-container {
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--background);
+    border: var(--accent), solid;
+}
+
+@media (orientation: landscape) {
+    div.projects-container {
+        padding: 2em;
+        gap: 2em;
+    }
+}
+
+@media (orientation: portrait) {
+    div.projects-container {
+        padding: 1em;
+        gap: 1em;
+    }
+}
+
+/* Styles the individual project boxes */
+div.project-box {
+    display: flex;
+
+    background-color: var(--text);
+    border: var(--accent), solid;
+
+    padding: 1rem;
+}
+
+/* Styles the  transparent text overlay for each project window */
+div.project-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-size: 100%;
+    border: var(--accent), solid;
+    border-radius: 0.3em;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
+
+    width: 100%;
+    height: 100%;
+
+    transition: 550ms all;
+}
+
+@media (orientation: landscape) {
+    div.project-image {
+        gap: 2em;
+        padding: 5.7% 0.8em;
+    }
+}
+
+@media (orientation: portrait) {
+    div.project-image {
+        gap: 1em;
+        padding: 4% 0.8em;
+    }
+}
+
+@media (max-width: 490px) {
+    div.project-image {
+        gap: 0.5em;
+        padding: 0.2em 0.6em;
+    }
+}
+
+div#gamelink.project-image {
+    background-image: url("/WEB504-Portfolio/assets/images/gamelink.png");
+}
+
+div#booktok.project-image {
+    background-image: url("/WEB504-Portfolio/assets/images/booktok.png");
+}
+
+div#reminder.project-image {
+    background-image: url("/WEB504-Portfolio/assets/images/reminders.png");
+}
+
+div#tictactoe.project-image {
+    background-image: url("/WEB504-Portfolio/assets/images/tictactoe.png");
+}
+
+div#records.project-image {
+    background-image: url("/WEB504-Portfolio/assets/images/records.png");
+}
+
+/* Removes shadow on hover */
+div.project-image:hover {
+    box-shadow: none;
+}
+
+/* Styles the header for each project window */
+div.project-image a {
+    color: var(--text);
+    text-shadow: 0.1em 0.1em rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+    font-weight: bold;
+
+    text-align: center;
+
+    opacity: 100%;
+
+    transition: 550ms all;
+}
+
+@media (orientation: landscape) {
+    div.project-image a {
+        font-size: 7em;
+    }
+}
+
+@media (max-width: 1400px) {
+    div.project-image a {
+        font-size: 5.6em;
+    }
+}
+
+@media (orientation: portrait) {
+    div.project-image a {
+        font-size: 2.8em;
+    }
+}
+
+/* Sets header invisible on hover */
+div.project-image:hover a {
+    opacity: 0%;
+}
+
+/* Styles the projects languages div */
+div.project-image div {
+    display: flex;
+
+    gap: 4em;
+
+    opacity: 100%;
+
+    transition: 550ms all;
+}
+
+/* Turns the languages div invisible on hover */
+div.project-image:hover div {
+    opacity: 0%;
+}
+
+@media (orientation: landscape) {
+    div.project-image img {
+        height: 7.2em;
+    }
+}
+
+@media (orientation: portrait) {
+    div.project-image img {
+        height: 3.5em;
+    }
+}

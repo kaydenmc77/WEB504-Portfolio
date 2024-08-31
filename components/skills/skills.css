@@ -1,0 +1,115 @@
+@import url("../../assets/global-styles/main.css");
+
+/*SECTION - Skills Page Styling*/
+
+/* Sets a div to contain all of the skill panels */
+div#skills-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+
+    justify-content: center;
+}
+
+@media (orientation: landscape) {
+    div#skills-container {
+        gap: 4em;
+    }
+}
+
+@media (orientation: portrait) {
+    div#skills-container {
+        gap: 2em;
+    }
+}
+
+/* Styling for each individual language box, makes consequent content fall underneath and sets a relative position for absolute elements */
+div.language-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    width: 45%;
+
+    margin-bottom: 16em;
+}
+
+@media (orientation: portrait) {
+    div.language-box {
+        margin-bottom: 20em;
+    }
+}
+
+@media (max-width: 900px) {
+    div.language-box {
+        margin-bottom: 16em;
+        width: 80%;
+        gap: 0;
+    }
+}
+
+@media (max-width: 700px) {
+    div.language-box {
+        margin-bottom: 20em;
+    }
+}
+
+@media (max-width: 500px) {
+    div.language-box {
+        margin-bottom: 26em;
+    }
+}
+
+/* Resizes the language badges and gives them a higher depth */
+div.language-box img {
+    height: 16em;
+
+    z-index: 20;
+}
+
+/* Styles the main backing box for general content, attaches it to a specific part of the website */
+div.individual-container {
+    display: flex;
+    justify-content: center;
+
+    background-color: var(--background);
+
+    padding: 1rem;
+
+    position: absolute;
+    top: 3em;
+    z-index: 10;
+}
+
+/* Styles the text box for the language panels */
+div.text-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-color: var(--text);
+    border: var(--accent), solid;
+
+    padding: 1rem;
+    padding-top: 12.4em;
+    width: 100%;
+    min-height: 10em;
+}
+
+/* Styles the header for the language panels */
+div.text-box h1 {
+    color: var(--accent);
+    text-align: center;
+    font-size: 3.2em;
+}
+
+/* Styles the paragraphs for the language panels */
+div.text-box p {
+    color: var(--accent);
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.5em;
+}

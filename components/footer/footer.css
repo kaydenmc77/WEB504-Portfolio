@@ -1,0 +1,17 @@
+@import url("../../assets/global-styles/main.css");
+
+/*SECTION - Footer */
+
+footer {
+    display: flex;
+    flex-direction: column;
+
+    padding: 0.5em;
+}
+
+footer p {
+    font-size: 0.75em;
+    text-align: right;
+    color: rgba(243, 220, 251, 0.8);
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+}
