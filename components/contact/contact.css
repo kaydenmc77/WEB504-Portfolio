@@ -9,11 +9,15 @@ div.contact-container {
 
     padding: 2rem;
 
-    width: 70%
+    width: 70%;
+
+    display: flex;
+    flex-direction: column;
 }
 
 /* Styles the text box for the contact page */
 .contact-container div {
+    display: flex;
     justify-content: center;
     flex-direction: column;
 }
