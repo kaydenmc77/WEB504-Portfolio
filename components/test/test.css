@@ -1,0 +1,78 @@
+@import url("../../assets/global-styles/main.css");
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f3f3;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#chat-container {
+  width: 90%;
+  max-width: 600px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+#chat-window {
+  height: 400px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+div.chat-message {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+
+  line-height: 1.5;
+  margin-bottom: 10px;
+
+  justify-content: space-between;
+}
+
+div.chat-heading {
+}
+
+div.chat-content {
+  word-wrap: break-word; /* Forces wrapping for long words */
+  overflow-wrap: break-word; /* Ensures consistent wrapping across browsers */
+  white-space: normal; /* Prevents text from staying on one line */
+}
+
+form {
+  display: flex;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
