@@ -18,7 +18,7 @@ firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     // User is signed in, see docs for a list of available properties
     // https://firebase.google.com/docs/reference/js/v8/firebase.User
-    var uid = user.uid;
+    var webUser = user.email;
     console.log("Signed in");
     // Select the header container
     const headerDiv = document.getElementById("header-container");
@@ -33,13 +33,13 @@ firebase.auth().onAuthStateChanged((user) => {
       <li><a href="projects.html">Projects</a></li>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="signout.html">Sign Out</a></li>
-      <li><a href="test.html">Chat</a></li>
     </ul>
   </nav>
 </header>
 `;
   } else {
     console.log("Signed out");
+    webUser = null;
     // Modify the content of the header
     headerDiv.innerHTML = `
   <header>
@@ -48,9 +48,7 @@ firebase.auth().onAuthStateChanged((user) => {
       <li><a href="index.html">Home</a></li>
       <li><a href="skills.html">Skills</a></li>
       <li><a href="projects.html">Projects</a></li>
-      <li><a href="contact.html">Contact</a></li>
       <li><a href="signin.html">Sign In</a></li>
-      <li><a href="test.html">Chat</a></li>
     </ul>
   </nav>
 </header>

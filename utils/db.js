@@ -1,19 +1,30 @@
 //SECTION - Comment Form
+var currentUser;
+
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    console.log("Currently signed in user:", user);
+    currentUser = user.email;
+  } else {
+    window.location.href = "signin.html"; // Modify the page to redirect
+  }
+});
+
 // DOM Elements
 const chatWindow = document.getElementById("chat-window");
 const chatForm = document.getElementById("chat-form");
-const usernameInput = document.getElementById("username");
 const messageInput = document.getElementById("message");
 
 // Add message to the database
 chatForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  const username = usernameInput.value.trim();
+
+  const email = currentUser;
   const message = messageInput.value.trim();
 
-  if (username && message) {
+  if (message) {
     database.ref("messages").push({
-      username,
+      email,
       message,
       timestamp: Date.now(),
     });
@@ -23,7 +34,7 @@ chatForm.addEventListener("submit", (e) => {
 
 // Listen for new messages
 database.ref("messages").on("child_added", (snapshot) => {
-  const { username, message, timestamp } = snapshot.val();
+  const { email, message, timestamp } = snapshot.val();
 
   const date = new Date(timestamp);
   const readableTimestamp = date.toLocaleString();
@@ -34,7 +45,7 @@ database.ref("messages").on("child_added", (snapshot) => {
   const msgContent = document.createElement("div");
 
   // Set the text content
-  msgHeading.textContent = `${username}: ${readableTimestamp}`;
+  msgHeading.textContent = `${email}: ${readableTimestamp}`;
   msgContent.textContent = `${message}`;
 
   msgDiv.className = "chat-message";

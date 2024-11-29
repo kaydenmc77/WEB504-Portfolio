@@ -16,6 +16,7 @@ accountForm.addEventListener("submit", (e) => {
     .then((userCredential) => {
       // Signed in
       var user = userCredential.user;
+      window.location.href = "index.html"; // Modify the page to redirect
       // ...
     })
     .catch((error) => {
@@ -25,6 +26,7 @@ accountForm.addEventListener("submit", (e) => {
         .then((userCredential) => {
           // Signed in
           var user = userCredential.user;
+          window.location.href = "index.html"; // Modify the page to redirect
           // ...
         })
         .catch((error) => {

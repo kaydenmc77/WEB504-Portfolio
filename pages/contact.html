@@ -37,11 +37,27 @@
         </form>
       </div>
     </div>
+
+    <div class="contact-container">
+      <h1>Leave a Comment</h1>
+      <div id="chat-window"></div>
+      <form id="chat-form">
+        <input
+          type="text"
+          id="message"
+          placeholder="Type your message..."
+          required
+        />
+        <input type="submit" value="Post Comment"></input>
+      </form>
+    </div>
     <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-database-compat.js"></script>
 
     <script src="../index.js"></script>
+    <script src="../utils/db.js"></script>
+  </body>
   </main>
 
   <footer>
