@@ -15,45 +15,35 @@
     <link rel="stylesheet" href="../components/footer/footer.css" />
 
     <title>Sign In</title>
+    <script type="module">
+      import { loadHeader } from "../utils/headerLoader.js";
+      loadHeader("header-container");
+    </script>
+
   </head>
 
-  <header>
-    <nav class="main-nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="signin.html">Sign In</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div id="header-container"></div>
 
   <main>
     <div class="box">
       <div class="contact-container">
         <div class="content-box">
-          <h1>Sign Up</h1>
+          <h1>Sign Up/Sign In</h1>
 
-          <form action="error.html">
-            <input type="email" placeholder="Email Address" />
-            <input type="password" placeholder="Password" />
-            <input type="submit" value="Sign Up" />
+          <form id="accountform">
+            <input type="email" id="emailinput" placeholder="Email Address" />
+            <input type="password" id="passwordinput" placeholder="Password" />
+            <input type="submit" id="signinbutton" value="Sign In" />
           </form>
         </div>
       </div>
-      <div class="contact-container">
-        <div class="content-box">
-          <h1>Sign In</h1>
 
-          <form action="error.html">
-            <input type="email" placeholder="Email Address" />
-            <input type="password" placeholder="Password" />
-            <input type="submit" value="Sign In" />
-          </form>
-        </div>
-      </div>
-    </div>
+      <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-database-compat.js"></script>
+      
+      <script src="../index.js"></script>
+      <script src="../utils/auth.js"></script>
   </main>
 
   <footer>

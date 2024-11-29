@@ -11,55 +11,49 @@ const firebaseConfig = {
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
 const database = firebase.database();
 
-// DOM Elements
-const chatWindow = document.getElementById("chat-window");
-const chatForm = document.getElementById("chat-form");
-const usernameInput = document.getElementById("username");
-const messageInput = document.getElementById("message");
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/v8/firebase.User
+    var uid = user.uid;
+    console.log("Signed in");
+    // Select the header container
+    const headerDiv = document.getElementById("header-container");
 
-// Add message to the database
-chatForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const username = usernameInput.value.trim();
-  const message = messageInput.value.trim();
-
-  if (username && message) {
-    database.ref("messages").push({
-      username,
-      message,
-      timestamp: Date.now(),
-    });
-    messageInput.value = ""; // Clear input
+    // Modify the content of the header
+    headerDiv.innerHTML = `
+  <header>
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="signout.html">Sign Out</a></li>
+      <li><a href="test.html">Chat</a></li>
+    </ul>
+  </nav>
+</header>
+`;
+  } else {
+    console.log("Signed out");
+    // Modify the content of the header
+    headerDiv.innerHTML = `
+  <header>
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="signin.html">Sign In</a></li>
+      <li><a href="test.html">Chat</a></li>
+    </ul>
+  </nav>
+</header>
+`;
   }
-});
-
-// Listen for new messages
-database.ref("messages").on("child_added", (snapshot) => {
-  const { username, message, timestamp } = snapshot.val();
-
-  const date = new Date(timestamp);
-  const readableTimestamp = date.toLocaleString();
-
-  // Create a new message div
-  const msgDiv = document.createElement("div");
-  const msgHeading = document.createElement("div");
-  const msgContent = document.createElement("div");
-
-  // Set the text content
-  msgHeading.textContent = `${username}: ${readableTimestamp}`;
-  msgContent.textContent = `${message}`;
-
-  msgDiv.className = "chat-message";
-  msgHeading.className = "chat-heading";
-  msgContent.className = "chat-content";
-
-  // Append the message to the chat window
-  chatWindow.appendChild(msgDiv);
-  msgDiv.appendChild(msgHeading);
-  msgDiv.appendChild(msgContent);
-
-  // Auto-scroll
-  chatWindow.scrollTop = chatWindow.scrollHeight;
 });

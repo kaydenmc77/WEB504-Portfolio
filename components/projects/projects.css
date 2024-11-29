@@ -83,23 +83,23 @@ div.project-image {
 }
 
 div#gamelink.project-image {
-  background-image: url("/WEB504-Portfolio/assets/images/gamelink.png");
+  background-image: url("../../assets/images/gamelink.png");
 }
 
 div#booktok.project-image {
-  background-image: url("/WEB504-Portfolio/assets/images/booktok.png");
+  background-image: url("../../assets/images/booktok.png");
 }
 
 div#reminder.project-image {
-  background-image: url("/WEB504-Portfolio/assets/images/reminders.png");
+  background-image: url("../../assets/images/reminders.png");
 }
 
 div#tictactoe.project-image {
-  background-image: url("/WEB504-Portfolio/assets/images/tictactoe.png");
+  background-image: url("../../assets/images/tictactoe.png");
 }
 
 div#records.project-image {
-  background-image: url("/WEB504-Portfolio/assets/images/records.png");
+  background-image: url("../../assets/images/records.png");
 }
 
 /* Removes shadow on hover */

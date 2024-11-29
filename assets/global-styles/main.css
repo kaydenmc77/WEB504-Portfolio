@@ -28,7 +28,7 @@ html {
 
 /* Sets the background to a gradient image and attachs it to the window */
 body {
-  background-image: url("/WEB504-Portfolio/assets/images/gradient-2.jpg");
+  background-image: url("../images/gradient-2.jpg");
   background-attachment: fixed;
   background-size: cover;
 }
