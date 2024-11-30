@@ -16,17 +16,21 @@ accountForm.addEventListener("submit", (e) => {
     .then((userCredential) => {
       // Signed in
       var user = userCredential.user;
-      window.location.href = "index.html"; // Modify the page to redirect
-      // ...
+      firebase
+        .auth()
+        .currentUser.sendEmailVerification()
+        .then(() => {
+          console.log("Verification sent");
+          window.location.href = "index.html";
+        });
     })
     .catch((error) => {
       firebase
         .auth()
         .signInWithEmailAndPassword(email, password)
         .then((userCredential) => {
-          // Signed in
           var user = userCredential.user;
-          window.location.href = "index.html"; // Modify the page to redirect
+          window.location.href = "index.html";
           // ...
         })
         .catch((error) => {
